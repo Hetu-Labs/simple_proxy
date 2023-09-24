@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+require_relative '../lib/simple_proxy'
+
+command = ARGV.first
+pid_file = 'simple_proxy.pid'
+
+def server_running?(pid_file)
+  return false unless File.exist?(pid_file)
+
+  pid = File.read(pid_file).to_i
+  begin
+    Process.getpgid(pid)
+    true
+  rescue Errno::ESRCH
+    false
+  end
+end
+
+def print_not_running_message
+  puts "\e[33m⚠️\e[0m  Server is not running!"
+end
+
+def print_already_running_message
+  puts "\e[33m⚠️\e[0m  Server is already running!"
+end
+
+def print_start_message
+  puts "\e[32m✔\e[0m Server is up and running!"
+end
+
+def print_stop_message
+  puts "\e[32m✔\e[0m Server has been stopped!"
+end
+
+def print_error_message
+  puts "\e[31m✘\e[0m Invalid command. Use 'start' to start the server and 'stop' to stop it."
+end
+
+case command
+when 'start'
+  if server_running?(pid_file)
+    print_already_running_message
+  else
+    SimpleProxy::App.run!
+    print_start_message
+  end
+when 'stop'
+  if server_running?(pid_file)
+    SimpleProxy::App.quit!
+    print_stop_message
+  else
+    print_not_running_message
+  end
+else
+  print_error_message
+end
