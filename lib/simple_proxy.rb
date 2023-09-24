@@ -47,6 +47,16 @@ module SimpleProxy
       proxy_request(:put)
     end
 
+    # Handle HEAD requests
+    put '/proxy' do
+      proxy_request(:head)
+    end
+
+    # Handle DELETE requests
+    put '/proxy' do
+      proxy_request(:delete)
+    end
+
     def proxy_request(method)
       target_url = params['url']
 
