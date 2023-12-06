@@ -1,8 +1,8 @@
 
 
 <div>
-  <img src="./assets/logo.png" alt="Simple Proxy Logo" width="100" style="border-radius: 20px; display:inline; vertical-align: middle;">
-</div> <br>
+  <img src="./assets/logo_sp.png" alt="Simple Proxy Logo" width="200" style="border-radius: 20px; display:inline; vertical-align: middle;">
+</div>
 
 # Simple Proxy
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
