@@ -2,9 +2,9 @@
 
 <div>
   <img src="./assets/logo.png" alt="Simple Proxy Logo" width="100" style="border-radius: 20px; display:inline; vertical-align: middle;">
-  <h1 style="display:inline; vertical-align: middle; margin-left: 10px;">Simple Proxy</h1>
 </div> <br>
 
+# Simple Proxy
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/gem/dt/simple_proxy.svg)](https://rubygems.org/gems/simple_proxy)
 [![Documentation](https://img.shields.io/badge/docs-rubydoc.info-blue.svg)](https://rubydoc.info/github/Hetu-Labs/simple_proxy)
